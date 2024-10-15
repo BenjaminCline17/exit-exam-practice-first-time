@@ -52,22 +52,35 @@ const tasks = [
   // PROBLEM #1 /////////////////////////////////////////////////
   ///////////////////////////////////////////////////////////////
   
-  let todos;
+  let todos = [];
+  todos.push("Clean", "Study", "Go Shopping");
   
   ///////////////////////////////////////////////////////////////
   // PROBLEM #2 /////////////////////////////////////////////////
   ///////////////////////////////////////////////////////////////
   
-  let getTaskByLength = function(){
-    
+  let getTaskByLength = function(array, targetLength){
+ if (targetLength === "longest") {
+ let longestWord = array.sort((a, b) => b.length - a.length);
+ return longestWord[0];
+ } else if (targetLength === "shortest") {
+let shortestWord = array.sort((a, b) => a.length - b.length);
+return shortestWord[0];
+ }
   };
   
   ///////////////////////////////////////////////////////////////
   // PROBLEM #3 /////////////////////////////////////////////////
   ///////////////////////////////////////////////////////////////
   
-  let awardPrize = function(){
-    
+  let awardPrize = function(array){
+    for (let i = 0; i < array.length; i++) {
+      if (i % 2 === 0){
+        array[i].prizeMoney = 10;
+      } else {
+        array[i].prizeMoney = 0;
+      }
+    }
   };
   
   ///////////////////////////////////////////////////////////////
